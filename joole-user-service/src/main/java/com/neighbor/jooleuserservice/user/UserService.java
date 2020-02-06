@@ -54,6 +54,7 @@ public class UserService {
         return userRepository.save(user) != null;
     }
 
+
     public boolean deleteByUsername(String subjectUsername) {
         return testUsers.removeIf(t -> t.getUsername().equals(subjectUsername));
     }
