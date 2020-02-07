@@ -1,0 +1,33 @@
+.right {
+    float: right;
+}
+
+.large-header{
+    height: 55vh;
+    position: relative;
+    width: 100%;
+}
+
+.low-center{
+    /*position: relative; */
+    /* bottom: 0%; */
+    display: inline-block;
+    /* margin-bottom: 0%; */
+    height: 100%;
+}
+
+.spacer{
+    height:33%;
+}
+
+p.tag-line {
+    font-size: 22px;
+    color: gray;
+    font-weight: 645;
+    padding-top: 10px;
+}
+
+.header{
+    text-align: center;
+
+}
