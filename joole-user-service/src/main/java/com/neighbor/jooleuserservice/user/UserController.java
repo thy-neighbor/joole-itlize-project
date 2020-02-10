@@ -17,6 +17,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "false")
 public class UserController {
 
     @Autowired

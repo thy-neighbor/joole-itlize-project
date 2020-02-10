@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "false")
 public class ProductSummaryController {
 
     @Autowired
