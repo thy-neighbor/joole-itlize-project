@@ -1,19 +1,18 @@
 import React ,{Component} from 'react';
 import NavBar from '../../components/header/NavBar';
-import LoginForm from './loginForm/loginForm';
-import './login.css';
-import './form.css';
+import SignupForm from './signupForm/signupForm';
+import '../login/form.css'
 
-import {loginUser} from '../../actions/auth'
+import { registerUser } from '../../actions/auth'
 
-export class Login extends Component{
+export class Signup extends Component{
     constructor(props){
         super(props);
     }
 
     onSubmitForm = (fields) =>{
         console.log(fields);
-        loginUser(fields.username,fields.password);
+        registerUser(fields);
     }
     
     render(){
@@ -22,7 +21,7 @@ export class Login extends Component{
                 <NavBar invisible={true} loggedIn={false}/>
                 <div className="row">
                     <div className="col-3 form-content">
-                        <LoginForm loginSubmit={fields => this.onSubmitForm(fields)}/>
+                        <SignupForm signupSubmit={fields => this.onSubmitForm(fields)}/>
                     </div>
                 </div>
             </section>
@@ -30,5 +29,4 @@ export class Login extends Component{
     }
 }
 
-export default Login;
-
+export default Signup;
