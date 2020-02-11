@@ -29,7 +29,7 @@ export const LoginForm = (props) => {
                             <ErrorMessage name="password" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group right">
-                            <button type="submit">Log In</button>
+                            <button class="submit-btn" type="submit">Log In</button>
                         </div>
                     </Form>
                 )}

@@ -3,7 +3,7 @@ import NavBar from '../../components/header/NavBar';
 import SignupForm from './signupForm/signupForm';
 import '../login/form.css'
 
-import { registerUser } from '../../actions/auth'
+import { registerUser } from '../../store/actions/auth'
 
 export class Signup extends Component{
     constructor(props){

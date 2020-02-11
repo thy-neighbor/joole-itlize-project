@@ -40,7 +40,7 @@ export const SignupForm = (props) => {
                             <ErrorMessage name="profileImage" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group right">
-                            <button type="submit">Sign Up</button>
+                            <button class="submit-btn" type="submit">Sign Up</button>
                         </div>
                     </Form>
                 )}

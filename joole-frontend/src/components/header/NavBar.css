@@ -31,3 +31,11 @@ p.tag-line {
     text-align: center;
     height:fit-content;
 }
+
+.nav-link{
+    padding: 2.5rem 4rem .5rem 1rem;
+}
+.nav-link>.right> a{
+    color: #5d5d5d;
+    font-weight: 745;
+}
