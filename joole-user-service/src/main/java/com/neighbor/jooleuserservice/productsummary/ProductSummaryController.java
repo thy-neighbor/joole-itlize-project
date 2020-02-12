@@ -26,7 +26,7 @@ public class ProductSummaryController {
     @PostMapping("/api/products")
     public HttpStatus addProduct(@RequestBody ProductSummary ps){
         return psService.addProduct(ps) ? HttpStatus.CREATED :
-                HttpStatus.BAD_REQUEST; //adds a user in database
+                HttpStatus.BAD_REQUEST; //adds a product summ in database
     }
 
     @DeleteMapping("api/products/{id}")

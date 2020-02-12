@@ -1,9 +1,12 @@
 package com.neighbor.jooleuserservice.productsummary;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.neighbor.jooleuserservice.Contact.Contact;
+import com.neighbor.jooleuserservice.productDetails.ProductDetails;
+import com.neighbor.jooleuserservice.productDocumentation.ProductDocumentation;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class ProductSummary {
@@ -38,12 +41,30 @@ public class ProductSummary {
 
     private String weight;
     //21 total properties - ID
+    private String type;
+
+    private String image;
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "ps")
+    private Set<ProductDetails> productDetails = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "ps")
+    private Set<ProductDocumentation> productDocumentation = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "ps")
+    private Set<Contact> contacts = new HashSet<>();
 
     public ProductSummary() {
     }
 
 
-    public ProductSummary(String manufacturer, String series, String model, String useType, String application, String mountingLocation, String accessories, String modelYear, String airFlow, String powerMin, String powerMax, String operatingVoltageMin, String operatingVoltageMax, String fanSpeedMin, String fanSpeedMax, String numberOfFanSpeeds, String soundAtMaxSpeed, String fanSweepDiameter, String heightMin, String heightMax, String weight) {
+    public ProductSummary(String manufacturer, String series, String model, String useType, String application, String mountingLocation, String accessories, String modelYear, String airFlow, String powerMin, String powerMax, String operatingVoltageMin, String operatingVoltageMax, String fanSpeedMin, String fanSpeedMax, String numberOfFanSpeeds, String soundAtMaxSpeed, String fanSweepDiameter, String heightMin, String heightMax, String weight, String type, String image) {
         this.manufacturer = manufacturer;
         this.series = series;
         this.model = model;
@@ -65,6 +86,9 @@ public class ProductSummary {
         this.heightMin = heightMin;
         this.heightMax = heightMax;
         this.weight = weight;
+        this.type=type;
+        this.image=image;
+        //this.productDetails=productDetails;
     }
 
     public Integer getPid() {
@@ -241,5 +265,45 @@ public class ProductSummary {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Set<ProductDetails> getProductDetails() {
+        return productDetails;
+    }
+
+    public void setProductDetails(Set<ProductDetails> productDetails) {
+        this.productDetails = productDetails;
+    }
+
+    public Set<ProductDocumentation> getProductDocumentation() {
+        return productDocumentation;
+    }
+
+    public void setProductDocumentation(Set<ProductDocumentation> productDocumentation) {
+        this.productDocumentation = productDocumentation;
+    }
+
+    public Set<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(Set<Contact> contacts) {
+        this.contacts = contacts;
     }
 }

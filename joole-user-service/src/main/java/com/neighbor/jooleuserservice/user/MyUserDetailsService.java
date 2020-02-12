@@ -23,8 +23,9 @@ public class MyUserDetailsService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		//use what stores your user to retrieve
 		com.neighbor.jooleuserservice.user.User myUser = userService.getByUsername(username);
+
 		if(myUser == null) {
-			throw new UsernameNotFoundException("User with email: "+username+" not found");
+			throw new UsernameNotFoundException("User with email: "+ username +" not found");
 		}
 		return new User(myUser.getUsername(),myUser.getPassword(), new ArrayList<GrantedAuthority>());
 	}
