@@ -5,7 +5,7 @@ export const SearchBar = (props) => {
     //render(){
         return(
             <div className="form-group">
-                <Dropdown/>
+                <Dropdown options={props.types}/>
             </div>
         );
     //}

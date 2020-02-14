@@ -32,15 +32,15 @@ export const authError = error => ({
 });
 
 //Default Post Options
-const options = {
+/* const options = {
     headers: {'Content-Type': 'application/json'}
-  };
+  }; */
 
 //auth functions
 export const loginUser = (username,password) => dispatch => {
     console.log("Inside of LOGIN ACTION");
     dispatch(authRequest());
-    return axios.post(`${API_BASE_URL}/authenticate`,{username,password},options)
+    return axios.post(`${API_BASE_URL}/authenticate`,{username,password})//,options)
     .then((res) => {
         console.log('LOGIN response: ', res);
         storeAuthInfo(res.data , dispatch)
@@ -52,7 +52,7 @@ export const loginUser = (username,password) => dispatch => {
 export const registerUser = (user) => //dispatch => 
 {
     console.log("Inside of REGISTER ACTION");
-    return axios.post(`${API_BASE_URL}/signup`,user,options)
+    return axios.post(`${API_BASE_URL}/signup`,user)//,options)
     .then((res) => {
         console.log('REGISTER response: ', res);
       }, (error) => {

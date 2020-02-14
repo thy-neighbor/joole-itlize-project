@@ -23,7 +23,7 @@ export const saveUser = user => {
 
 export const loadUser = () => {
     try {
-        localStorage.getItem('authUser');
+        return JSON.parse(localStorage.getItem('authUser'));
     } catch (e) {}    
 }
 

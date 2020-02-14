@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
 import './index.css';
 import App from './App';
 import {Provider} from 'react-redux';
-import authReducer from './store/reducers/auth'
 import store from './store/store';
+import {setupAxiosInterceptor} from './config/interceptor'
 
 import * as serviceWorker from './serviceWorker';
 
 //const store = createStore(authReducer);
+setupAxiosInterceptor(store,window.location.pathname);
 
 ReactDOM.render(
     <Provider store={store}>

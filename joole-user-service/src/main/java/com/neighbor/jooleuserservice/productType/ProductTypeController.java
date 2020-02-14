@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*", allowCredentials = "false")
 public class ProductTypeController {
     @Autowired

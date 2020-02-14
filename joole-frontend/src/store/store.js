@@ -1,11 +1,16 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from './reducers/auth';
+import productReducer from './reducers/product'
 import {setAuthToken, authSuccess} from './actions/auth';
 import {loadUser} from '../utilities/local-storage';
 
 
-const store = createStore(authReducer,
+const store = createStore(
+    combineReducers({
+        auth:authReducer,
+        product:productReducer
+    }),
     applyMiddleware(thunk)
 );
 

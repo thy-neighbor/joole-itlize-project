@@ -35,8 +35,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  hasAuthToken: state.authToken !== null,
-  loggedIn: state.currentUser !== null
+  hasAuthToken: state.auth.authToken !== null,
+  loggedIn: state.auth.currentUser !== null
 });
 
 //export default App;
