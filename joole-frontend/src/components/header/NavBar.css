@@ -39,3 +39,26 @@ p.tag-line {
     color: #5d5d5d;
     font-weight: 745;
 }
+
+.profile-img{
+    vertical-align: middle;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.profile-img-container{
+    padding-left: 20px;
+}
+
+.small-logo{
+    width:70%;
+}
+
+.big-logo{
+    
+}
+
+.small-header{
+    padding-top: 2.5rem;
+}

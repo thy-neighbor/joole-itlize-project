@@ -25,7 +25,7 @@ export const LoginForm = (props) => {
                             <ErrorMessage name="username" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group">
-                            <Field name="password" type="text" className={'form-control password '+ (errors.password && touched.password ? 'is-invalid' : '')} placeholder="Password" />
+                            <Field name="password" type="password" className={'form-control password '+ (errors.password && touched.password ? 'is-invalid' : '')} placeholder="Password" />
                             <ErrorMessage name="password" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-group right">

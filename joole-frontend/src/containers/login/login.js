@@ -5,16 +5,21 @@ import LoginForm from './loginForm/loginForm';
 import './login.css';
 import './form.css';
 
-import {loginUser} from '../../store/actions/auth'
+import {loginUser} from '../../store/actions/auth';
+import {Redirect} from 'react-router-dom';
 
 export class Login extends Component{
     
     onSubmitForm = (fields) =>{
-        this.props.loginUser(fields.username,fields.password)
+        this.props.loginUser(fields.username,fields.password);
+    
     }
     
     render(){
-        console.log(this.props);
+        if (this.props.loggedIn) {
+            return <Redirect to="/search"/>;
+        }
+        
         return(
             <section className="login-container">
                 <NavBar invisible={true} loggedIn={false}/>
@@ -29,9 +34,11 @@ export class Login extends Component{
 }
 const mapStateToProps = state =>{
     return{
-        currentUser: state.auth.currentUser
+        loggedIn: state.currentUser != null
+
     }
 };
+
 
 
 export default connect(mapStateToProps , {loginUser})(Login);

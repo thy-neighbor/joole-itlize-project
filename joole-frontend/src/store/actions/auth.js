@@ -55,6 +55,7 @@ export const registerUser = (user) => //dispatch =>
     return axios.post(`${API_BASE_URL}/signup`,user)//,options)
     .then((res) => {
         console.log('REGISTER response: ', res);
+        return res.status;
       }, (error) => {
         console.log(error);
       });
@@ -63,11 +64,12 @@ export const registerUser = (user) => //dispatch =>
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authInfo, dispatch) => {
+  const user = JSON.stringify(authInfo);  //needs to be a json to store in local storage
+  saveUser(user);
   dispatch(setAuthToken(authInfo.jwt));
   dispatch(authSuccess(authInfo));
   //saveAuthToken(authToken);
-  const user = JSON.stringify(authInfo);  //needs to be a json to store in local storage
-  saveUser(user);
+  
 };
 
 

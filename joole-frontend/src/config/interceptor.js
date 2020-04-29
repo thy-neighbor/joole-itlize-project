@@ -17,7 +17,7 @@ export const setupAxiosInterceptor = (store, pathname) =>{
             return config;
         },
         error => {
-            if (error.response.status === 401) {
+            if (error.response.status === 401 || error.response.status === 403) {
                 //store.dispatch(logoutUser());
               }
             Promise.reject(error);

@@ -1,13 +1,14 @@
 import React ,{Component} from 'react';
-import {BrowserRouter as Router, Route, withRouter, Switch} from 'react-router-dom';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
 import './App.css';
 import {connect} from 'react-redux';
 
-import {NavBar} from './components/header/NavBar'
-import Login from './containers/login/login'
-import Signup from './containers/signup/signup'
+
+import Login from './containers/login/login';
+import Signup from './containers/signup/signup';
 import Search from './containers/search/search';
+import ProductPage from './containers/product-page/product-page';
 
 
 const Page404 = ({ location }) => (
@@ -24,7 +25,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/login' component={Login} />
             <Route exact path='/signup' component={Signup} />
+            <Route exact path='/' component={Search} />
             <Route exact path='/search' component={Search} />
+            <Route exact path='/products' component={ProductPage} />
             <Route component={Page404} />
           </Switch>
         </div>
